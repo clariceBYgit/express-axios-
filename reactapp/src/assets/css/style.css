@@ -103,3 +103,12 @@
 .newContent .newList img{
     width: 100%;
 }
+
+/* 疫情地图 */
+
+#map{
+    top: -57px;
+    width: 310px;
+    height: 430px;
+    margin: 31px;
+}

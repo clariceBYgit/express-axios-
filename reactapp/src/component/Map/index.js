@@ -9,22 +9,17 @@ export default class Map extends Component {
 //  componentWillReceiveProps 
   componentWillReceiveProps (nextProps) {
       let { mapData } = nextProps
-    //   let obj = {}
-    // //  console.log(mapData)
-    //     mapData.map((item,index)=>{
-    //         // console.log(item.name)
-    //         obj[item.name] = item.name
-    //         // console.log(obj)
-    //     })
-    //     for(var item in mapData){
-    //         obj[mapData[item].name] = mapData[item]
-    //     }
-    //     let list = []
-    //     for(const key in obj){
-    //         obj[key].name = key
-    //         list.push(obj[key])
-    //     }
-    //     console.log(list)
+      let obj = {}
+      mapData.map((item,index)=>{
+          // console.log(item.name)
+          obj[item.name] = item.name
+        })
+        //  console.log(mapData)
+        for(var item in mapData){
+            obj[mapData[item].name] = mapData[item]
+        }
+        console.log(obj)
+     
       function randomValue() {
           return Math.round(Math.random()*1000);
                 }
@@ -67,8 +62,8 @@ export default class Map extends Component {
     ]
     // 将实时数据的value值进行替换
     dataList.map((item,index)=>{
-                    if(mapData[index[item.name]]){
-        //                 item.value =mapData[index[item.confirmedNum]]
+                    if(obj[item.name]){
+                        item.value = obj[item.name].confirmedNum
                     } else {
                         item.value = 0
                     }
@@ -130,7 +125,7 @@ export default class Map extends Component {
                     ]
                 };
                 myChart.setOption(option)
-        // console.log(myChart)
+        console.log(myChart)
     }
  
     render() {
